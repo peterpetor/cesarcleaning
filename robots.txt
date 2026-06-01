@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cesarcleaning.ch/sitemap.xml
+Sitemap: https://cesarcleaning.ch/hu/sitemap.xml
+Sitemap: https://cesarcleaning.ch/en/sitemap.xml
