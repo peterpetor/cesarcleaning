@@ -676,6 +676,23 @@ footer{background:var(--blue-900);color:#bcd9ee;padding:46px 0 30px}
 .foot-links a:hover{color:#fff}
 .foot-bot{margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);font-size:.8rem;color:#86afd0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+/* ===== Price banner ===== */
+.price-banner{max-width:600px;margin:0 auto 46px;background:#fff;border-radius:var(--r);box-shadow:var(--shadow-sm);padding:26px 30px;text-align:center;border-top:4px solid var(--blue-600)}
+.price-banner b{display:block;font-size:clamp(1.25rem,2.6vw,1.6rem);color:var(--ink)}
+.price-banner span{display:block;margin-top:8px;color:var(--muted);font-size:.98rem;font-weight:300}
+/* ===== Burst badges ===== */
+.burst-sec{text-align:center}
+.burst{position:relative;width:min(320px,84vw);aspect-ratio:1/1;margin:0 auto;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan-300),var(--blue-700));clip-path:polygon(100% 50%,84.8% 59.3%,93.3% 75%,75.5% 75.5%,75% 93.3%,59.3% 84.8%,50% 100%,40.7% 84.8%,25% 93.3%,24.5% 75.5%,6.7% 75%,15.2% 59.3%,0% 50%,15.2% 40.7%,6.7% 25%,24.5% 24.5%,25% 6.7%,40.7% 15.2%,50% 0%,59.3% 15.2%,75% 6.7%,75.5% 24.5%,93.3% 25%,84.8% 40.7%);animation:burstPulse 3s ease-in-out infinite}
+.burst span{width:60%;color:#fff;font-weight:800;font-size:clamp(1.05rem,2.4vw,1.35rem);line-height:1.35;text-transform:uppercase;letter-spacing:.02em}
+@keyframes burstPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.burst-sub{max-width:580px;margin:28px auto 0;color:var(--muted);font-size:1.04rem}
+/* ===== Footer hours ===== */
+.foot-hours{font-size:.9rem;color:#bcd9ee}
+.foot-hours h4{color:#fff;margin:0 0 10px;font-size:.92rem;letter-spacing:.08em;text-transform:uppercase}
+.foot-hours table{border-collapse:collapse}
+.foot-hours td{padding:2px 0}
+.foot-hours td:first-child{padding-right:22px}
+
 /* ===== Floating WhatsApp ===== */
 .fab{
   position:fixed;right:20px;bottom:20px;z-index:80;width:60px;height:60px;border-radius:50%;
@@ -892,6 +909,14 @@ footer{background:var(--blue-900);color:#bcd9ee;padding:46px 0 30px}
   </div>
 </section>
 
+<!-- ============ GRATIS ============ -->
+<section class="burst-sec" id="gratis" style="padding:70px 0">
+  <div class="wrap reveal">
+    <div class="burst"><span data-i18n="gratis_burst">Bei uns jedes Jahr gratis</span></div>
+    <p class="burst-sub" data-i18n="gratis_p">Jedes Jahr bieten wir unseren Kundinnen und Kunden zwei Geschenke zur Auswahl: eine Kühlschrankreinigung oder eine komplette Bett- und Matratzendesinfektion mit dem Kärcher Dampfreiniger.</p>
+  </div>
+</section>
+
 <!-- ============ SERVICES ============ -->
 <section class="sec-pad services" id="services">
   <div class="wrap">
@@ -900,7 +925,18 @@ footer{background:var(--blue-900);color:#bcd9ee;padding:46px 0 30px}
       <h2 data-i18n="svc_h" style="color:#87ceeb">Alles für ein sauberes Zuhause</h2>
       <p data-i18n="svc_sub">Vom regelmässigen Unterhalt bis zur Spezialreinigung – professionell und mit Sorgfalt erledigt.</p>
     </div>
+    <div class="price-banner reveal">
+      <b data-i18n="price_h">Unsere Preise beginnen ab 45 CHF/Stunde.</b>
+      <span data-i18n="price_s">(Der Stundenansatz variiert je nach Häufigkeit der Reinigung.)</span>
+    </div>
     <div class="svc-grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<!-- ============ GUARANTEE ============ -->
+<section class="burst-sec" id="guarantee" style="padding:70px 0;background:#eef7ff">
+  <div class="wrap reveal">
+    <div class="burst"><span data-i18n="guarantee_burst">Endreinigung mit Übergabegarantie</span></div>
   </div>
 </section>
 
@@ -1037,6 +1073,14 @@ footer{background:var(--blue-900);color:#bcd9ee;padding:46px 0 30px}
         <a href="#contact" data-i18n="nav_contact">Kontakt</a>
         <a href="https://wa.me/41774141421" target="_blank" rel="noopener">WhatsApp</a>
       </div>
+      <div class="foot-hours">
+        <h4 data-i18n="hours_h">Öffnungszeiten</h4>
+        <table><tbody>
+          <tr><td data-i18n="hours_d1">Montag – Freitag</td><td>7:00 – 20:00</td></tr>
+          <tr><td data-i18n="hours_d2">Samstag</td><td>12:00 – 16:00</td></tr>
+          <tr><td data-i18n="hours_d3">Sonntag</td><td data-i18n="hours_closed">geschlossen</td></tr>
+        </tbody></table>
+      </div>
     </div>
     <div class="foot-bot">
       <span>© <span id="yr"></span> Andrea Páll · Cesar Cleaning · Winterthur</span>
@@ -1082,6 +1126,11 @@ const I18N = {
     cc_h:"Jetzt unverbindlich anfragen",cc_sub:"Der schnellste Weg zu Ihrem Termin – ein Klick genügt.",
     cta_wa:"WhatsApp schreiben",cta_call:"Jetzt anrufen",cta_mail:"E-Mail senden",
     cc_area:"Winterthur und Umgebung im Umkreis von 30 km.",
+    price_h:"Unsere Preise beginnen ab 45 CHF/Stunde.",price_s:"(Der Stundenansatz variiert je nach Häufigkeit der Reinigung.)",
+    gratis_burst:"Bei uns jedes Jahr gratis",
+    gratis_p:"Jedes Jahr bieten wir unseren Kundinnen und Kunden zwei Geschenke zur Auswahl: eine Kühlschrankreinigung oder eine komplette Bett- und Matratzendesinfektion mit dem Kärcher Dampfreiniger.",
+    guarantee_burst:"Endreinigung mit Übergabegarantie",
+    hours_h:"Öffnungszeiten",hours_d1:"Montag – Freitag",hours_d2:"Samstag",hours_d3:"Sonntag",hours_closed:"geschlossen",
     services:[
       ["Allgemeine Reinigung","Regelmässiger Unterhalt für ein dauerhaft sauberes Zuhause."],
       ["Grundreinigung","Gründliche Tiefenreinigung bis ins kleinste Detail."],
@@ -1127,6 +1176,11 @@ const I18N = {
     cc_h:"Kérj ingyenes ajánlatot",cc_sub:"A leggyorsabb út az időpontodhoz – egyetlen kattintás.",
     cta_wa:"Írok WhatsAppon",cta_call:"Hívás most",cta_mail:"E-mail küldése",
     cc_area:"Winterthur és környéke 30 kilométeres körzetben.",
+    price_h:"Áraink 45 CHF/órától kezdődnek.",price_s:"(Az óradíj a takarítás gyakorisága szerint változik.)",
+    gratis_burst:"Nálunk minden évben grátisz",
+    gratis_p:"Minden évben ügyfeleink részére két választható ajándékot kínálunk: hűtőtakarítást vagy komplett ágy- és matracfertőtlenítést Kärcher gőztisztító géppel.",
+    guarantee_burst:"Végtakarítás átadási garanciával",
+    hours_h:"Nyitvatartás",hours_d1:"Hétfő – Péntek",hours_d2:"Szombat",hours_d3:"Vasárnap",hours_closed:"zárva",
     services:[
       ["Általános takarítás","Rendszeres karbantartás a tartósan tiszta otthonért."],
       ["Nagytakarítás","Alapos, mélyreható tisztítás a legapróbb részletekig."],
@@ -1172,6 +1226,11 @@ const I18N = {
     cc_h:"Request a free quote",cc_sub:"The fastest way to your appointment – just one click.",
     cta_wa:"Message on WhatsApp",cta_call:"Call now",cta_mail:"Send email",
     cc_area:"Winterthur and surroundings within a 30 km radius.",
+    price_h:"Our prices start from 45 CHF/hour.",price_s:"(The hourly rate varies with the frequency of cleaning.)",
+    gratis_burst:"Free every year with us",
+    gratis_p:"Every year we offer our clients a choice of two gifts: a fridge cleaning or a complete bed and mattress disinfection with the Kärcher steam cleaner.",
+    guarantee_burst:"Final cleaning with handover guarantee",
+    hours_h:"Opening hours",hours_d1:"Monday – Friday",hours_d2:"Saturday",hours_d3:"Sunday",hours_closed:"closed",
     services:[
       ["General cleaning","Regular upkeep for a consistently clean home."],
       ["Deep cleaning","Thorough deep cleaning down to the smallest detail."],
