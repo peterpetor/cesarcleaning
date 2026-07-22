@@ -683,7 +683,7 @@ footer{background:var(--blue-900);color:#bcd9ee;padding:46px 0 30px}
 /* ===== Burst badges ===== */
 .burst-sec{text-align:center}
 .burst{position:relative;width:min(320px,84vw);aspect-ratio:1/1;margin:0 auto;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan-300),var(--blue-700));clip-path:polygon(100% 50%,84.8% 59.3%,93.3% 75%,75.5% 75.5%,75% 93.3%,59.3% 84.8%,50% 100%,40.7% 84.8%,25% 93.3%,24.5% 75.5%,6.7% 75%,15.2% 59.3%,0% 50%,15.2% 40.7%,6.7% 25%,24.5% 24.5%,25% 6.7%,40.7% 15.2%,50% 0%,59.3% 15.2%,75% 6.7%,75.5% 24.5%,93.3% 25%,84.8% 40.7%);animation:burstPulse 3s ease-in-out infinite}
-.burst span{width:60%;color:#fff;font-weight:800;font-size:clamp(1.05rem,2.4vw,1.35rem);line-height:1.35;text-transform:uppercase;letter-spacing:.02em}
+.burst span{width:74%;color:#fff;font-weight:800;font-size:clamp(.92rem,2vw,1.2rem);line-height:1.3;text-transform:uppercase;letter-spacing:.01em;overflow-wrap:break-word;hyphens:auto}
 @keyframes burstPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
 .burst-sub{max-width:580px;margin:28px auto 0;color:var(--muted);font-size:1.04rem}
 /* ===== Footer hours ===== */
@@ -1077,7 +1077,7 @@ footer{background:var(--blue-900);color:#bcd9ee;padding:46px 0 30px}
         <h4 data-i18n="hours_h">Öffnungszeiten</h4>
         <table><tbody>
           <tr><td data-i18n="hours_d1">Montag – Freitag</td><td>7:00 – 20:00</td></tr>
-          <tr><td data-i18n="hours_d2">Samstag</td><td>12:00 – 16:00</td></tr>
+          <tr><td data-i18n="hours_d2">Samstag</td><td>11:00 – 20:00</td></tr>
           <tr><td data-i18n="hours_d3">Sonntag</td><td data-i18n="hours_closed">geschlossen</td></tr>
         </tbody></table>
       </div>
@@ -1134,7 +1134,7 @@ const I18N = {
     services:[
       ["Allgemeine Reinigung","Regelmässiger Unterhalt für ein dauerhaft sauberes Zuhause."],
       ["Grundreinigung","Gründliche Tiefenreinigung bis ins kleinste Detail."],
-      ["Umzugsreinigung","Reinigung vor und nach dem Umzug – übergabebereit."],
+      ["Endreinigung","Reinigung vor und nach dem Umzug – übergabebereit."],
       ["Fensterreinigung","Streifenfreie, klare Fenster innen und aussen."],
       ["Polster- & Teppichreinigung","Mit der Kärcher Polsterreinigungsmaschine – Sofa, Teppich, Autositze."],
       ["Wäsche & Aufhängen","Waschen und Aufhängen Ihrer Wäsche."],
@@ -1142,7 +1142,8 @@ const I18N = {
       ["Terrassenreinigung","Mit dem Hochdruckreiniger – frisch und sauber."],
       ["Kleine Gartenarbeiten","Unterstützung bei leichten Arbeiten im Garten."],
       ["Backofenreinigung","Backofen, Glaskeramik und Dunstabzug porentief sauber."],
-      ["Badreinigung","Kalkfreie Bäder, Duschen, Fugen und Armaturen."]
+      ["Badreinigung","Kalkfreie Bäder, Duschen, Fugen und Armaturen."],
+      ["Entsorgung von PET, Alu & Glas","Wir transportieren PET, Aluminium und Glas zusammen mit der Reinigung ab."]
     ],
     feat:["Flächendesinfektion","Mit dem Kärcher Dampfreiniger – chemiefrei & hygienisch.","EMPFEHLUNG"]
   },
@@ -1192,7 +1193,8 @@ const I18N = {
       ["Terasz takarítás","Magasnyomású géppel – frissen és tisztán."],
       ["Kisebb kerti munkák","Segítség könnyebb kerti feladatokban."],
       ["Sütő tisztítása","Sütő, üvegkerámia főzőlap és páraelszívó alapos tisztítása."],
-      ["Fürdőszoba takarítás","Vízkőmentes fürdő, zuhanyzó, fugák és csaptelepek."]
+      ["Fürdőszoba takarítás","Vízkőmentes fürdő, zuhanyzó, fugák és csaptelepek."],
+      ["PET, alu & üveg elszállítása","A PET-et, alumíniumot és üveget a takarítással együtt elszállítjuk."]
     ],
     feat:["Felületfertőtlenítés","Kärcher gőztisztító géppel (Dampfreiniger) – vegyszermentes & higiénikus.","AJÁNLOM"]
   },
@@ -1242,7 +1244,8 @@ const I18N = {
       ["Terrace cleaning","With the high-pressure washer – fresh and clean."],
       ["Light garden work","Help with lighter tasks in the garden."],
       ["Oven cleaning","Oven, glass-ceramic hob and extractor deeply cleaned."],
-      ["Bathroom cleaning","Limescale-free baths, showers, grout and fixtures."]
+      ["Bathroom cleaning","Limescale-free baths, showers, grout and fixtures."],
+      ["PET, aluminium & glass disposal","We take away PET, aluminium and glass together with the cleaning."]
     ],
     feat:["Surface disinfection","With the Kärcher steam cleaner – chemical-free & hygienic.","RECOMMENDED"]
   }
@@ -1260,7 +1263,8 @@ const SVC_ICONS = [
   '<path d="M3 16h18M6 16V8l4-4 4 4v8M12 4v4"/><path d="M3 20h18"/>',
   '<path d="M12 22c4-3 6-7 6-11a6 6 0 0 0-12 0c0 4 2 8 6 11z"/><path d="M12 11v6"/>',
   '<rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M6 6.5h2"/><circle cx="12" cy="14.5" r="3"/>',
-  '<path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-3z"/><path d="M7 12V6a2 2 0 0 1 4 0"/><path d="M6 19l-1 2M19 19l1 2"/>'
+  '<path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-3z"/><path d="M7 12V6a2 2 0 0 1 4 0"/><path d="M6 19l-1 2M19 19l1 2"/>',
+  '<path d="M7 19H4.8a2 2 0 0 1-1.7-3l2-3.4"/><path d="M11 6l1.9-3.3a2 2 0 0 1 3.4 0L18 6"/><path d="M14 22l2.9-2.9L14 16"/><path d="M18 19h1.2a2 2 0 0 0 1.7-3l-1.2-2"/><path d="M8 8L5 6.5 3.6 9.4"/>'
 ];
 
 const PAGE_LANG = 'de';
@@ -1324,7 +1328,22 @@ const hamb=document.getElementById('hamb');
 function openMM(){mm.classList.add('open');hamb.classList.add('open');hamb.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}
 function closeMM(){mm.classList.remove('open');hamb.classList.remove('open');hamb.setAttribute('aria-expanded','false');document.body.style.overflow=''}
 hamb.addEventListener('click',()=>{mm.classList.contains('open')?closeMM():openMM()});
-mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMM));
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',(e)=>{
+  const href=a.getAttribute('href')||'';
+  if(href.charAt(0)==='#'&&href.length>1){
+    const target=document.querySelector(href);
+    if(target){
+      e.preventDefault();
+      closeMM();
+      setTimeout(()=>{
+        const y=target.getBoundingClientRect().top+window.pageYOffset;
+        window.scrollTo({top:y,behavior:'smooth'});
+      },420);
+      return;
+    }
+  }
+  closeMM();
+}));
 addEventListener('keydown',e=>{if(e.key==='Escape'&&mm.classList.contains('open'))closeMM()});
 addEventListener('resize',()=>{if(innerWidth>980&&mm.classList.contains('open'))closeMM()});
 
